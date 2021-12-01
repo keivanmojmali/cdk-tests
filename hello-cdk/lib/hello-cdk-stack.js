@@ -1,4 +1,5 @@
 const cdk = require('@aws-cdk/core');
+const s3 = require('@aws-cdk/aws-s3');
 // const sqs = require('@aws-cdk/aws-sqs');
 
 class HelloCdkStack extends cdk.Stack {
@@ -17,6 +18,11 @@ class HelloCdkStack extends cdk.Stack {
     // const queue = new sqs.Queue(this, 'HelloCdkQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
+
+    new s3.Bucket(this, "MyFirstBucket", {
+      versioned: true
+    });
+
   }
 }
 
