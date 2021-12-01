@@ -8,9 +8,7 @@ export class SimpleAppStack extends cdk.Stack {
     super(scope, id, props);
 
     // The code that defines your stack goes here
-    const bucket = new Bucket(this,'MySimpleApp', {
-      encryption: BucketEncryption.S3_MANAGED,
-    });
+    const bucket = new s3.Bucket(this,'MySimpleApp');
 
 
 
