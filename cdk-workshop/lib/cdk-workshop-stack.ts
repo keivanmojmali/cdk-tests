@@ -1,4 +1,4 @@
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 export class CdkWorkshopStack extends cdk.Stack {
@@ -11,7 +11,7 @@ export class CdkWorkshopStack extends cdk.Stack {
       code: lambda.Code.fromAsset('lambda'),
       //code loaded from "lambda" directory
       handler: 'hello.handler'
-      //file is "hello", function is 
+      //file is "hellno", function is 
     })
 
   }
