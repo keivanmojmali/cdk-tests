@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
 import { CdkWorkshopStack } from '../lib/cdk-workshop-stack';
 
 const app = new cdk.App();

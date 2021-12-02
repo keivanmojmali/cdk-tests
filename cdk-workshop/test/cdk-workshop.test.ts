@@ -1,25 +1,17 @@
-import { Template, Match } from '@aws-cdk/assertions';
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
+import { Template, Match } from 'aws-cdk-lib/assertions';
 import * as CdkWorkshop from '../lib/cdk-workshop-stack';
 
-test('SQS Queue Created', () => {
+test('SQS Queue and SNS Topic Created', () => {
   const app = new cdk.App();
-    // WHEN
+  // WHEN
   const stack = new CdkWorkshop.CdkWorkshopStack(app, 'MyTestStack');
-    // THEN
+  // THEN
+
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties('AWS::SQS::Queue', {
     VisibilityTimeout: 300
   });
-});
-
-test('SNS Topic Created', () => {
-  const app = new cdk.App();
-  // WHEN
-  const stack = new CdkWorkshop.CdkWorkshopStack(app, 'MyTestStack');
-  // THEN
-  const template = Template.fromStack(stack);
-
   template.resourceCountIs('AWS::SNS::Topic', 1);
 });
