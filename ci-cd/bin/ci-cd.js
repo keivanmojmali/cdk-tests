@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const cdk = require('@aws-cdk/core');
-const { MyPipelineStack } = require('../lib/my-pipeline-stack');
+const { MyPipelineStack } = require('../lib/ci-cd-stack');
 
 const app = new cdk.App();
 new MyPipelineStack(app, 'MyPipelineStack', {
