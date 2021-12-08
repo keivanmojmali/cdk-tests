@@ -4,6 +4,8 @@ const todoRoutes = require("./routes/todo.routes");
 
 app.use("/todos",todoRoutes);
 
+app.use(express.json());
+
 app.get("/", (req,res)=>{
     res.json("Hello World");
 });
